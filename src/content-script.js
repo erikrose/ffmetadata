@@ -1,11 +1,7 @@
 const getMetadata = require("./utils/get-metadata.js");
 
 function getData() {
-  return getMetadata({
-    baseURI: document.baseURI,
-    documentURI: document.documentURI,
-    fullText: document.documentElement.innerHTML
-  });
+  return getMetadata(document.documentElement.innerHTML);
 }
 
 browser.runtime.onMessage.addListener((actionType) => {
